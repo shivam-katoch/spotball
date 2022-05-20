@@ -1,4 +1,6 @@
 this project is created by using 
-React hooks
+React js,
+React hooks and 
 Material ui
-hosted at https://clinquant-pudding-eeb351.netlify.app/
+hosted at
+https://radiant-kitten-aef20d.netlify.app/
