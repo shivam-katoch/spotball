@@ -24,11 +24,11 @@ const Search = () => {
          
 
          <Autocomplete
-        multiple
-        id="tags-standard"
-        options={Data}
-        getOptionLabel={(item) => `${item.email}${item.Name}`}
-        onChange={(event,value)=>updateItem(value)}
+        multiple=true,
+        id="tags-standard",
+        options={Data},
+        getOptionLabel={(item) => `${item.email}${item.Name}`},
+        onChange={(event,value)=>updateItem(value)},
         renderInput={(params) => (
           <TextField
 
