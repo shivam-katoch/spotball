@@ -5,15 +5,15 @@ import List from './List';
 import { Data } from './Data';
 import { Editable } from '@chakra-ui/react';
 const Search = () => {
-    const [text,setText]=useState("");
+    
     const[item,updateItem]=useState([]);
-    const handleChange=(e)=> {setText(e.target.value);};
-   
+    const [final,setFinal]=useState([]);
+    const [id,setId]=useState(true);
+ 
+    
     const addItem=()=>{
-     updateItem([...item,{item:text,key :Date.now()}]);
-     console.log(item);
-     setText("");
-    //  dfdf
+     setFinal([...final,...item]);
+     setId(!id);
 
     };
   return (
@@ -25,7 +25,7 @@ const Search = () => {
 
          <Autocomplete
         multiple
-        id="tags-standard"
+        id={id}
         options={Data}
         getOptionLabel={(item) => `${item.email}${item.Name}`}
         onChange={(event,value)=>updateItem(value)}
@@ -46,7 +46,7 @@ const Search = () => {
          <Button sx={{ fontSize:'1vw', height:'3.1vw',bgcolor:'#000C66',borderBottomLeftRadius:'0',display:'flex',borderTopLeftRadius:'0'}} onClick={addItem} variant='contained' color='info'>
            Add
           </Button>
-          <List item={item} updateItem={updateItem}/>
+          <List final={final} setFinal={setFinal}/>
       </FormControl>
       
      </Container> 
