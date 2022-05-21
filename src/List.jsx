@@ -3,12 +3,11 @@ import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-function List({item,updateItem}) {
+function List({final,setFinal}) {
 
-const{Name,Post,email}=item;
 
 const hand=(id)=>{
-  const newL=item.filter(e=>{
+  const newL=final.filter(e=>{
   return e.id!==id});
   
  //item.updateItem(newL);}
@@ -18,7 +17,7 @@ const hand=(id)=>{
   <> 
    <Grid container direction="column" style={{marginTop:'2rem'}}spacing={1}>
    {
-     item.map((itfg)=>{
+     final.map((itfg)=>{
        return (
          
           <Box sx={{width:'auto',bgcolor:'rgba(255,255,255, 0.3)', display:'flex', flex:'wrap',alignItems:"center", justifyContent:'space-between',p:'0.5rem',color:'black'}}>
