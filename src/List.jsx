@@ -5,16 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 function List({item,updateItem}) {
 
-const{Name,Post,email}=item;
-
-const hand=(id)=>{
-  const newL=item.filter(e=>{
-  return e.id!==id});
-  
- //item.updateItem(newL);}
-}
-
-  return (
+return (
   <> 
    <Grid container direction="column" style={{marginTop:'2rem'}}spacing={1}>
    {
@@ -31,9 +22,9 @@ const hand=(id)=>{
           <Typography  sx={{ fontSize:'1.8vw',fontWeight:'bold'}}>{itfg.Name}</Typography>
           <Typography   sx={{fontSize:'1.1vw',font:'arial'}}>{itfg.Post.split('-')[0]}</Typography>
           </Box>
-            {/* {itfg.Name }{" "}{itfg.Post} */}
+            
             </Box>
-            <IconButton onClick={hand(itfg.id)} sx={{color:'#000C66',height:'3vw',width:'3vw'}}  aria-label="delete">
+            <IconButton onClick={()=>item.filter((e)=>e.id!==tfg.id)} sx={{color:'#000C66',height:'3vw',width:'3vw'}}  aria-label="delete">
             <DeleteIcon />
             </IconButton>
             </Box>
